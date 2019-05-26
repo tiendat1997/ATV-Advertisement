@@ -10,19 +10,19 @@ namespace DataService.Services
 {
     public interface IAdvertisementService
     {
-        Advertisment GetById(int id);
+        Advertisement GetById(int id);
     }
 
     public class AdvertisementService : IAdvertisementService
     {
-        private readonly AdvertismentRepository _advertismentRepository;
+        private readonly AdvertisementRepository _advertismentRepository;
 
         public AdvertisementService()
         {
-            _advertismentRepository = new AdvertismentRepository();
+            _advertismentRepository = new AdvertisementRepository();
         }
 
-        public Advertisment GetById(int id)
+        public Advertisement GetById(int id)
         {
             return _advertismentRepository.GetById(id);
         }

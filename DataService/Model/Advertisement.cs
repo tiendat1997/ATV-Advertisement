@@ -6,8 +6,8 @@ namespace DataService.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Advertisment")]
-    public partial class Advertisment
+    [Table("Advertisement")]
+    public partial class Advertisement
     {
         public int Id { get; set; }
 

@@ -17,7 +17,7 @@ namespace ATV_Advertisement.Controllers
             _advertisementService = new AdvertisementService();
         }
 
-        public Advertisment GetById(int id)
+        public Advertisement GetById(int id)
         {
             return _advertisementService.GetById(id);
         }

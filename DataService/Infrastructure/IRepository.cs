@@ -32,12 +32,12 @@ namespace DataService.Infrastructure
 
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal Entities context;
+        internal ATVEntities context;
         internal DbSet<TEntity> dbSet;
 
         public Repository()
         {
-            this.context = new Entities();
+            this.context = new ATVEntities();
             this.dbSet = context.Set<TEntity>();
         }
 

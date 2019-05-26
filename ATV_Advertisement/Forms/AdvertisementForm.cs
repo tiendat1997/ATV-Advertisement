@@ -26,7 +26,7 @@ namespace ATV_Advertisement.Forms
             try
             {
                 _advertisementController = new AdvertisementController();
-                Advertisment advertisment = _advertisementController.GetById(1);
+                Advertisement advertisment = _advertisementController.GetById(1);
                 string strContent = advertisment.Code + " " + advertisment.Price + " " + advertisment.DurationMinute;
 
                 MessageBox.Show(strContent);

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DataService.Repositories
 {
-    public interface IAdvertismentRepository : IRepository<Advertisment>
+    public interface IAdvertismentRepository : IRepository<Advertisement>
     {
 
     }
-    public class AdvertismentRepository : Repository<Advertisment>, IAdvertismentRepository
+    public class AdvertisementRepository : Repository<Advertisement>, IAdvertismentRepository
     {
-        public AdvertismentRepository()
+        public AdvertisementRepository()
         {
         }
     }
