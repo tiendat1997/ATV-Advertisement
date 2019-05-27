@@ -33,7 +33,7 @@
             // 
             // btnGetAds1
             // 
-            this.btnGetAds1.Location = new System.Drawing.Point(289, 130);
+            this.btnGetAds1.Location = new System.Drawing.Point(23, 25);
             this.btnGetAds1.Name = "btnGetAds1";
             this.btnGetAds1.Size = new System.Drawing.Size(75, 23);
             this.btnGetAds1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(411, 202);
             this.Controls.Add(this.btnGetAds1);
             this.Name = "AdvertisementForm";
             this.Text = "AdvertisementForm";

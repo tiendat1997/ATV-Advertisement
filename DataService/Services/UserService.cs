@@ -12,6 +12,7 @@ namespace DataService.Services
     public interface IUserService
     {
         User GetLogin(string username, string password);
+        void UpdateLastLogin(string username);
     }
 
     public class UserService : IUserService
@@ -31,6 +32,12 @@ namespace DataService.Services
                             u.IsActive == true && 
                             hashHelper.VerifyHashedPassword(u.PasswordHash, password))
                 .FirstOrDefault();
+        }
+
+        public void UpdateLastLogin(string username)
+        {
+            _userRepository.Get(u => u.Username == username).FirstOrDefault()
+                .LastLoginTime = DateTime.Now;
         }
     }
 }

@@ -54,11 +54,17 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Model\Advertisement.cs" />
     <Compile Include="Model\ATVEntities.cs" />
+    <Compile Include="Model\MenuItem.cs" />
     <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\RoleHasMenuItem.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdvertisementRepository.cs" />
+    <Compile Include="Repositories\MenuItemRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\RoleHasMenuItemRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\MenuItemService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\AdvertisementService.cs" />
   </ItemGroup>

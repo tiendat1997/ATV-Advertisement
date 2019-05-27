@@ -32,6 +32,9 @@ namespace ATV_Advertisement.Common.Auth
                             ROLE = user.Role.Name;
                             ISLOGIN = true;
 
+                            //Update last login
+                            userService.UpdateLastLogin(username);
+
                             result = true;
                         }
                     }

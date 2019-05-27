@@ -6,25 +6,26 @@ namespace DataService.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Role")]
-    public partial class Role
+    [Table("MenuItem")]
+    public partial class MenuItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Role()
+        public MenuItem()
         {
             RoleHasMenuItems = new HashSet<RoleHasMenuItem>();
-            Users = new HashSet<User>();
         }
 
         public int Id { get; set; }
 
-        [StringLength(20)]
+        [StringLength(50)]
         public string Name { get; set; }
+
+        public int? Level { get; set; }
+
+        [StringLength(50)]
+        public string ParentName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoleHasMenuItem> RoleHasMenuItems { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
     }
 }
