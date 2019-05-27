@@ -33,18 +33,14 @@ namespace ATV_Advertisement
                     {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
-                        Application.Run(new LoginForm());
+                        Application.Run(new MainForm());
                     }
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
         }
 
         class SingleInstanceMutex : IDisposable
@@ -109,7 +105,7 @@ namespace ATV_Advertisement
             /// <remarks>
             /// All public methods of the class must first call this
             /// </remarks>
-            public void ThrowIdDisposed()
+            public void ThrowIfDisposed()
             {
                 if (this.disposed)
                 {

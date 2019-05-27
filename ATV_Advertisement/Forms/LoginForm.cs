@@ -22,33 +22,21 @@ namespace ATV_Advertisement.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string role = "";
             try
             {
-                Session.Login(txtUsername.Text, txtPassword.Text);
-                if (Session.IsLogin())
+                if(!Session.Login(txtUsername.Text, txtPassword.Text))
                 {
-                    role = Session.GetRole();
-
-                    if (role == RoleConstants.ADMIN)
-                    {
-                        AdminForm adminForm = new AdminForm();
-                        adminForm.FormClosed += new FormClosedEventHandler(LoginForm_FormClosed);
-                        adminForm.Show();
-                        this.Hide();
-                    }
-                    else if (role == RoleConstants.STAFF)
-                    {
-                        AdvertisementForm advertisementForm = new AdvertisementForm();
-                        advertisementForm.FormClosed += new FormClosedEventHandler(LoginForm_FormClosed);
-                        advertisementForm.Show();
-                        this.Hide();
-                    }
+                    Utils.ShowError(CommonMessages.INVALID_LOGIN);
                 }
+                this.Hide();
             }
             catch (Exception ex)
             {
                 Utils.ShowError(ex.Message);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
         }
 

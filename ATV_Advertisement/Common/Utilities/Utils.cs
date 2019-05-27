@@ -12,13 +12,13 @@ namespace ATV_Advertisement.Common.Utilities
         public static void ShowMessage(string message)
         {
             var cursor = Cursor.Current;
-            MessageBox.Show(message, "Message");
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void ShowError(string message)
         {
             var cursor = Cursor.Current;
-            MessageBox.Show(message, "Error");
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace ATV_Advertisement.Common.Auth
                     if (!string.IsNullOrWhiteSpace(password))
                     {
                         user = userService.GetLogin(username, password);
-                        if(user != null)
+                        if (user != null)
                         {
                             FULLNAME = user.Fullname;
                             CODE = user.Code;
@@ -52,7 +52,7 @@ namespace ATV_Advertisement.Common.Auth
 
         public static bool CheckAuthorize(string role)
         {
-            bool result = false; 
+            bool result = false;
             try
             {
                 if (ISLOGIN)
@@ -100,6 +100,19 @@ namespace ATV_Advertisement.Common.Auth
 
         public static bool IsLogin()
         {
+            ISLOGIN = false;
+
+            if (!string.IsNullOrWhiteSpace(FULLNAME))
+            {
+                if (!string.IsNullOrWhiteSpace(CODE))
+                {
+                    if (!string.IsNullOrWhiteSpace(ROLE))
+                    {
+                        ISLOGIN = true;
+                    }
+                }
+            }
+
             return ISLOGIN;
         }
     }
