@@ -13,7 +13,7 @@ using static ATV_Advertisement.Common.Constants.Constants;
 
 namespace ATV_Advertisement.Forms
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : MaterialSkin.Controls.MaterialForm
     {
         public AdminForm()
         {
@@ -22,6 +22,21 @@ namespace ATV_Advertisement.Forms
                 Utils.ShowMessage(CommonMessages.UNAUTHORIZED);
             }
             InitializeComponent();
+            adminMenu.Items.Add("Hello", null, menuItem_Click);
+        }
+
+        public void menuItem_Click(object sender, EventArgs e)
+        {
+            string formName = "";
+            if (sender is MenuItem)
+            {
+                var menuItem = sender as MenuItem;
+                if (menuItem.Name != null)
+                {
+                    formName = menuItem.Text;
+                    MessageBox.Show(formName);
+                }
+            }
         }
     }
 }
